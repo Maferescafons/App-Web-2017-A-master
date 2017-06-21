@@ -40,4 +40,16 @@ module.exports = {
 
   //Si la solicitud quiere datos "frescos", por lo general usted querrá .find()datos frescos de sus modelos y la envían de vuelta al cliente.
 
+  fresh: function (req, res){
+      sails.log.info(req.fresh)
+    if (req.fresh){
+      // El usuario-agente solicita una versión más actualizada del recurso solicitado.
+      // Vamos a la base de datos para obtener algunas cosas y enviarlo de vuelta.
+    }
+    else
+    {
+      return res.send("El usuario no ha solicitado nada");
+    }
+  }
+  ////
 };
