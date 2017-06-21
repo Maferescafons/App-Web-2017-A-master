@@ -36,6 +36,7 @@ module.exports = {
       return res.send("Error");
     }
   },
+
   /////req.fresh--Una bandera que indica el envío de esta solicitud de agente de usuario ( req) quiere datos "frescos" (como se indica por el " si-no-match ", " Cache-Control " y / o " If-Modified-ya " los encabezados de solicitud.)
 
   //Si la solicitud quiere datos "frescos", por lo general usted querrá .find()datos frescos de sus modelos y la envían de vuelta al cliente.
@@ -50,6 +51,12 @@ module.exports = {
     {
       return res.send("El usuario no ha solicitado nada");
     }
-  }
-  ////
+  },
+
+  ////req.host----The hostname of this request, without the port number, as specified by its "Host" header.
+  reqHost: function (req, res){
+    sails.log.info(req.headers.host)
+  },
+  
+
 };
